@@ -60,13 +60,13 @@ jobs:
         name: data
         path: site/src/data/
   
-        - name: Build
-        run: npm run build --prefix site
+      - name: Build
+      run: npm run build --prefix site
   
-        - name: Upload release candidate
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "site/dist"
+      - name: Upload release candidate
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: "site/dist"
   
   deploy:
       name: Deploy
