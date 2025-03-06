@@ -42,22 +42,22 @@ build:
     runs-on: ubuntu-latest
     needs: scrape
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: "20.11"
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: "20.11"
 
-      - name: Install dependencies
-      run: npm install --prefix site
+    - name: Install dependencies
+    run: npm install --prefix site
 
-      - name: Download data
-      uses: actions/download-artifact@v4
-      with:
-        name: data
-        path: site/src/data/
+    - name: Download data
+    uses: actions/download-artifact@v4
+    with:
+      name: data
+      path: site/src/data/
 
       - name: Build
       run: npm run build --prefix site
